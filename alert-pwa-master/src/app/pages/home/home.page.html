@@ -1,0 +1,72 @@
+<ion-content fullscreen>
+  <ion-header class="ion-no-border">
+    <ion-toolbar translucent>
+      <ion-title color="light">Home</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button color="light">
+          <ion-icon name="grid-outline"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-buttons class="header-right-btn" slot="end" (click)="goToNotifications()">
+        <ion-icon color="light" name="notifications-outline"></ion-icon>
+      </ion-buttons>
+      <ion-buttons slot="end" class="header-right-btn">
+        <ion-icon color="light" name="snow-outline"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="menu-header-bg">
+    <ion-icon class="header-bg-icon" name="grid-outline"></ion-icon>
+  </div>
+
+  <div class="user-msg">
+    <h3>Hey,</h3>
+    <h3>Kishore,</h3>
+    <h3>We're here for you.</h3>
+  </div>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <div class="msg-area">
+          <ion-icon name="megaphone-outline"></ion-icon>
+          <p>
+            In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings
+            in
+            which
+            procedures or support treatments that generate aerosols are performed; i.e., endotracheal intubation,
+            bronchoscopy,
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <div (click)="goToChat()" class="menu-cards messaging-c">
+          <ion-icon name="chatbubbles-outline"></ion-icon>
+          <h2>Messaging</h2>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div (click)="goToNewsFeed()" class="menu-cards newsfeeds-c">
+          <ion-icon name="newspaper-outline"></ion-icon>
+          <h2>News Feeds</h2>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div (click)="goToCalendar()" class="menu-cards calendar-c">
+          <ion-icon name="calendar-outline"></ion-icon>
+          <h2>Calendar</h2>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="menu-cards healthcare-c">
+          <ion-icon name="medkit-outline"></ion-icon>
+          <h2>Healthcare</h2>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,122 @@
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
+
+.menu-header-bg {
+    height: 180px;
+    // width: 350px;
+    background: #78ACFC;
+    background: linear-gradient(90deg, #7590d6 0%, #4d71d7 100%);
+    box-shadow: 0px 1px 10px rgba(98, 150, 255, 0.5);
+    transform: rotate(-12deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: -18px;
+    margin-top: -130px;
+    margin-bottom: 60px;
+
+}
+
+.header-bg-icon {
+    color: #5b7bd78a;
+    font-size: 172px;
+}
+
+.header-right-btn{
+    font-size: 28px;
+    padding: 5px;
+}
+
+.user-msg {
+    color: #636d8b;
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    text-align: right;
+}
+
+.user-msg h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px ;
+}
+.msg-area {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #bd768d40;
+    color: #444;
+    text-align: justify;
+    background: rgb(246, 213, 93);
+    background: -moz-linear-gradient(90deg, rgba(246, 213, 93, 1) 0%, rgba(240, 95, 165, 1) 71%);
+    background: -webkit-linear-gradient(90deg, rgba(246, 213, 93, 1) 0%, rgba(240, 95, 165, 1) 71%);
+    background: linear-gradient(90deg, #728dd6 0%, #d74fc1 71%)
+}
+
+.msg-area ion-icon {
+    font-size: 144px;
+    color: #33232b4a;
+    position: absolute;
+    right: 20px;
+    z-index: 0;
+    
+}
+
+.msg-area p {
+    position: relative;
+    z-index: 9;
+    color:#fff;
+    margin:0;
+}
+
+.menu-cards {
+    text-align: center;
+  margin: 10px;
+    border-radius: 35% 65% 40% 60% / 68% 69% 31% 32%;
+    padding: 16px;
+    color: #fff;
+    overflow: hidden;
+
+}
+
+.menu-cards ion-icon {
+    color:#fff;
+    font-size: 60px;
+
+}
+
+.messaging-c {
+    background: rgb(100, 130, 238);
+    background: -moz-linear-gradient(90deg, rgba(100, 130, 238, 1) 0%, rgba(145, 109, 224, 1) 71%);
+    background: -webkit-linear-gradient(90deg, rgba(100, 130, 238, 1) 0%, rgba(145, 109, 224, 1) 71%);
+    background: linear-gradient(90deg, rgba(100, 130, 238, 1) 0%, rgba(145, 109, 224, 1) 71%);
+    box-shadow: 0px 10px 10px 0px #8076e673;
+}
+
+.healthcare-c {
+    background: rgb(82, 163, 233);
+    background: -moz-linear-gradient(90deg, rgba(82, 163, 233, 1) 0%, rgba(77, 96, 238, 1) 71%);
+    background: -webkit-linear-gradient(90deg, rgba(82, 163, 233, 1) 0%, rgba(77, 96, 238, 1) 71%);
+    background: linear-gradient(90deg, rgba(82, 163, 233, 1) 0%, rgba(77, 96, 238, 1) 71%);
+    box-shadow: 0px 10px 10px 0px #4f76ed75;
+}
+
+.newsfeeds-c {
+    background: rgb(91, 157, 221);
+    background: -moz-linear-gradient(90deg, rgba(91, 157, 221, 1) 0%, rgba(56, 218, 129, 1) 71%);
+    background: -webkit-linear-gradient(90deg, rgba(91, 157, 221, 1) 0%, rgba(56, 218, 129, 1) 71%);
+    background: linear-gradient(90deg, rgba(91, 157, 221, 1) 0%, rgba(56, 218, 129, 1) 71%);
+    box-shadow: 0px 10px 10px 0px #48beab66;
+}
+
+.calendar-c {
+    background: rgb(246, 95, 139);
+    background: -moz-linear-gradient(90deg, rgba(246, 95, 139, 1) 0%, rgba(245, 154, 150, 1) 71%);
+    background: -webkit-linear-gradient(90deg, rgba(246, 95, 139, 1) 0%, rgba(245, 154, 150, 1) 71%);
+    background: linear-gradient(90deg, rgba(246, 95, 139, 1) 0%, rgba(245, 154, 150, 1) 71%);
+    box-shadow: 0px 10px 10px 0px #f58b9370;
+    ;
+}
+

@@ -1,0 +1,27 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar class="ion-no-border" >
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light" text-center>
+    Notification
+    </ion-title>
+    <ion-icon slot="end" expand="icon-only" name="more" mode="ios" color="light"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="notif-header">
+    <h3>{{current_notification.title}} : {{current_notification.type}}</h3>
+    <h4>{{current_notification.description}}</h4>
+    <ion-icon name="add"></ion-icon>
+
+  </div>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6"></ion-col>
+      <ion-col size="6"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

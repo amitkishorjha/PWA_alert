@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-justify" color="light">Add Notification</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light">
+        <ion-icon name="grid-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-card class="welcome-card"  style="padding: 6px;">
+  <form #notificatonForm="ngForm" (submit)="onSubmit(notificatonForm)" autocomplete="off">
+    <div>
+    <div class="form-group">
+      <label>Title</label>
+      <input [(ngModel)]="notification.Title" required #Title="ngModel" type="text" 
+       class="form-control" name="Title"/>
+      <!-- <small class="text-danger" [class.d-none]="Title.valid || Title.untouched">Title is required</small> -->
+    </div>
+
+      <div class="form-group">
+      <label>type</label>
+      <input [(ngModel)]="notification.Type" required #Type="ngModel" type="text" 
+       class="form-control" name="Type"/>
+      <!-- <small class="text-danger" [class.d-none]="Type.valid || Type.untouched">Text is required</small> -->
+    </div>
+  
+    <div class="form-group">
+      <label>Description</label>
+      <textarea [(ngModel)]="notification.Description" required #Description="ngModel" type="text" 
+       class="form-control" name="Description"></textarea>
+      <!-- <small class="text-danger" [class.d-none]="Text.valid || Text.untouched">Text is required</small> -->
+    </div>
+<div class="form-group">
+<ion-item>
+  <input type="hidden" [(ngModel)]="notification.currentuser" #currentuser="ngModel" name="currentuser"/>
+  <ion-label>select Users</ion-label>
+  <ion-select [(ngModel)]="notification.User_id" #User_id="ngModel" name="User_id" multiple="true">
+  <div  *ngFor="let user of userlist">
+    <ion-select-option *ngIf="user.userid != curruserid" value="{{user.userid}}">{{user.fname}}</ion-select-option>
+    </div>
+  </ion-select>
+</ion-item>
+</div>
+  </div>
+<div class="form-group">
+<ion-card>
+<h4 style="text-align:center"><b>select image</b></h4>
+<ion-item>
+  <ion-card style="border: 1px solid darkblue;">
+    <ion-row>
+      <ion-col>
+    <ion-button (click)="openCamera()" color="primary" expand="block" class="round-btn">Camera</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button (click)="openGallery()" color="primary" expand="block" class="round-btn">Gallery</ion-button>
+  </ion-col>
+  </ion-row>
+  </ion-card>
+  <ion-card style="border:2px solid blue">
+<img [src]="base64Image" />
+</ion-card>
+</ion-item>
+</ion-card>
+</div>
+  <hr>
+  <button type="submit" class="btn btn-primary col-md-4 mr-2"> Submit </button>
+  </form>
+</ion-card>
+</ion-content>

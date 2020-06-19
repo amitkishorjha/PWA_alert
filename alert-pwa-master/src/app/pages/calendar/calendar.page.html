@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light">
+        <ion-icon name="grid-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title><ion-icon name="calendar-outline"></ion-icon>
+      {{ currentMonth }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="showAddEvent" class="ion-padding">
+    <ion-item>
+      <ion-label><b>Title:</b></ion-label>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="newEvent.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Description:</b></ion-label>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="newEvent.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Image:</b></ion-label>
+      <ion-input type="text" placeholder="Image Url" [(ngModel)]="newEvent.imageURL"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Start</b></ion-label>
+      <ion-datetime doneText="OK" cancelText="Cancel" i18n displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm"
+        [(ngModel)]="newEvent.startTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>End</b></ion-label>
+      <ion-datetime doneText="OK" cancelText="Cancel" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm"
+        [(ngModel)]="newEvent.endTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-button color="primary" expand="block" (click)="addEvent()">Add</ion-button>
+  </div>
+
+<calendar  *ngIf="!showAddEvent" id="myCalendar" 
+[eventSource]="allEvents" 
+ calendarMode="month" 
+ startHour="6" 
+ endHour="20"
+  step="30" 
+  startingDayWeek="1"
+  [currentDate]="currentDate" 
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)">
+</calendar>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="showHideForm()">
+    <ion-icon *ngIf="!showAddEvent" name="add"></ion-icon>
+    <ion-icon *ngIf="showAddEvent" name="close"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

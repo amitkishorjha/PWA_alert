@@ -1,0 +1,79 @@
+.nameAvatar {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+    h2 {
+        font-size: 0.94em;
+        font-weight: bold;
+    }
+}
+h2 {
+    color: #383a3ec7;
+}
+
+.withcount {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.timeEnd {
+    display: flex;
+    justify-content: flex-end;
+    width: 49%;
+    margin-top: 5px;
+    align-items: center;
+}
+ion-text {
+    font-size: 10px;
+}
+
+.ProfileAvatr {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #2049bc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.notifImage {
+    width: 45px;
+    height: 45px;
+}
+
+ion-item-option {
+    --background: #acbef2;
+    --color: var(--ion-color-dark-shade);
+
+    .timeEnd {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .notifCount {
+        background: #4e71d5;
+        width: 70px !important;
+        height: 30px !important;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--ion-color-tertiary-contrast);
+        border-radius: 10px;
+        box-shadow:0px 6px 4px #4e71d582;
+    }
+
+}
+
+.select-icon-inner {
+    left: -5px;
+    margin-top: -6px;
+    border-top: 14px solid;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}

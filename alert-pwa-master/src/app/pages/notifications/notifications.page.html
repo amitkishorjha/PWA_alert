@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+   <ion-searchbar autofocus [(ngModel)]="filter.searchtext"></ion-searchbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+    <ion-button (click)="notifSearch()">
+    <ion-icon name="search-outline"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+    <ion-label>Filter by</ion-label>
+<ion-select [interfaceOptions]="customActionSheetOptions" [(ngModel)]="filter.filterby" placeholder="Select One">
+      <ion-select-option value="date">date</ion-select-option>
+      <ion-select-option value="type">type</ion-select-option>
+      <ion-select-option value="name">user</ion-select-option>
+</ion-select>
+</ion-item>
+ <ion-list  class="ion-no-padding">
+   <div *ngFor="let notif of notifData">
+     <ion-item-sliding>
+       <ion-item (click)="goToNotif(notif)">
+         <div class="ProfileAvatr" slot="start">
+           <ion-avatar class="notifImage">
+             <ion-img [src]="notif.thumbnail"></ion-img>
+           </ion-avatar>
+         </div>
+         <ion-label>
+           <div class="withcount">
+             <div class="nameAvatar">
+               <h2>{{notif.type}}
+               </h2>
+             </div>
+             <div class="timeEnd">
+               <ion-text slot="end" color="medium">{{notif.creation_date | date:'yyyy-MM-dd HH:mm:ss'}}</ion-text>
+               
+             </div>
+           </div>
+           <p class="widthHalf">{{notif.description}}</p>
+          
+         </ion-label>
+       </ion-item>
+       <ion-item-options side="end">
+         <ion-item-option>
+           <div class="timeEnd">
+             <div class="notifCount">
+               <ion-icon name="trash" expand="icon-only"></ion-icon>
+             </div>
+           </div>
+         </ion-item-option>
+       </ion-item-options>
+     </ion-item-sliding>
+   </div>
+</ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="AddNotification()">
+      <ion-icon  name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

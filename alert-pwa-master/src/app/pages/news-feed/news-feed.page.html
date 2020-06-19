@@ -1,0 +1,45 @@
+<ion-header >
+  <ion-toolbar color="primary">
+   <ion-searchbar animated></ion-searchbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon  name="filter" class="ion-padding"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of newsdata" (click)="goToNews(item)">
+  <div *ngIf="item.text != null">
+    <ion-card-content class="ion-no-padding">
+      <ion-row class="ion-no-padding">
+        <ion-col size="4">
+        <img src="../../assets/images/new-feed-img.jpg">
+        </ion-col>
+        <ion-col size="8">
+          <h2><b> {{item.title}}</b></h2> <p>{{item.type}}</p>
+
+          <p class='ellipsis'> {{ item.text}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding">
+        <ion-col size="6" class="ion-no-padding ion-padding-start news-time">
+          {{item.date | date:'yyyy-MM-dd HH:mm:ss'}}
+        </ion-col>
+        <ion-col size="6" class="ion-no-padding ion-text-right ion-padding-end editor-text" color="primary">
+          news by {{item.user_id}} <ion-icon  name="book"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    </div>
+  </ion-card>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showAddNews()">
+      <ion-icon  name="add"></ion-icon>
+      
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

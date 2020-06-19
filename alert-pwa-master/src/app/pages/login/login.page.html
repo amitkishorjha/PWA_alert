@@ -1,0 +1,26 @@
+<div class="ion-text-center">
+  <form #loginForm="ngForm" (submit)="onSubmit(loginForm)" autocomplete="off">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size-md="6" class="ion-align-items-center">
+          <div>
+            <h3>Login</h3>
+          </div>
+          <ion-item>
+            <ion-label position="floating">user name <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="fname" required type="text" name="fname"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="password" required type="password" name="password"></ion-input>
+          </ion-item>
+          <ion-button type="submit" color="primary">
+            Login
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</div>

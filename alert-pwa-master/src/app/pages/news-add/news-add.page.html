@@ -1,0 +1,45 @@
+<ion-header  class="ion-no-border" >
+  <ion-toolbar class="ion-no-border" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light" class="ion-text-center">
+   Add News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-card class="welcome-card"  style="padding: 6px;">
+  <form #newsForm="ngForm" (submit)="onSubmit(newsForm)" autocomplete="off">
+    <div>
+    <div class="form-group">
+      <label>Title</label>
+      <input [(ngModel)]="news.title" required #title="ngModel" type="text" 
+       class="form-control" name="title"/>
+      <!-- <small class="text-danger" [class.d-none]="Title.valid || Title.untouched">Title is required</small> -->
+    </div>
+
+      <div class="form-group">
+      <label>News type</label>
+      <input [(ngModel)]="news.type" required #type="ngModel" type="text" 
+       class="form-control" name="type"/>
+      <!-- <small class="text-danger" [class.d-none]="Type.valid || Type.untouched">Text is required</small> -->
+    </div>
+  
+  
+    <div class="form-group">
+      <label>Full news</label>
+      <textarea [(ngModel)]="news.text" required #text="ngModel" type="text" 
+       class="form-control" name="text"></textarea>
+      <!-- <small class="text-danger" [class.d-none]="Text.valid || Text.untouched">Text is required</small> -->
+    </div>
+
+  </div>
+
+  <hr>
+  <button type="submit" class="btn btn-primary col-md-4 mr-2"> Submit </button>
+  </form>
+</ion-card>
+</ion-content>

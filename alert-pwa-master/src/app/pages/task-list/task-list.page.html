@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>task-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-padding-top">
+    <ion-item *ngFor="let task of taskData"  lines="none">
+      <div class="borderBottomLine"></div>
+      <div class="listSection">
+        <div class="UserimgSection">
+          <ion-avatar class="taksImage" slot="start">
+            <ion-img [src]="task.image"></ion-img>
+            <span class="onlineOffline_icon" [ngStyle]="{'background-color':(task.status === 'online'? '#4cd137' : '#c23616')}"></span>
+          </ion-avatar>
+        </div>
+        <div class="usernameSection ion-padding-start"  padding>
+          <h5>
+            <ion-icon *ngIf="task.group" name="people" color="medium"></ion-icon>
+            <ion-icon name="microphone" *ngIf="task.broadcast" color="medium"></ion-icon>
+             {{task.name}}
+            </h5>
+          <p class="descText ion-no-margin ion-no-padding" >{{task.description}}</p>
+        </div>
+      </div>
+      <div slot="end" class="lastSection">
+        <ion-text *ngIf="task.badge || !task.time" class="sendTime" color="medium">{{task.sendTime}}</ion-text>
+          <ion-badge slot="end" class="userBadge" *ngIf="task.badge">{{task.badge}}</ion-badge>
+          <ion-text slot="end" *ngIf="task.time" class="sendTime" color="medium">{{task.time}}</ion-text>
+      </div>
+      
+    </ion-item>
+    </ion-list>
+</ion-content>
